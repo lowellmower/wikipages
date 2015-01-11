@@ -1,0 +1,10 @@
+default: &default
+  adapter: postgresql
+
+development:
+  <<: *default
+  database: wikipages_development
+
+test:
+  <<: *default
+  database: wikipages_test
