@@ -9,6 +9,7 @@ gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'sdoc'
+gem 'web-console'
 
 group :development do
 	gem 'better_errors'
