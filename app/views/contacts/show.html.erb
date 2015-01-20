@@ -1,7 +1,27 @@
 <h1>Here is <%= @contact.name%>'s contact informaiton:</h1>
 
-<p>Phone: <%= @contact.phone %></p>
+<p>Main Phone: <%= @contact.phone %></p>
 <p>Email: <%= @contact.email %></p>
+
+<h1><%= @contact.name %></h1>
+
+<p>Alternative Phones:</p>
+
+<ul>
+  <% @contact.phones.each do |phone| %>
+    <li>
+      <%= phone.number %> |
+      <a href="/contacts/<%= @contact.id %>/phones/<%= phone.id %>/edit">Edit</a> |
+      <a href="/contacts/<%= @contact.id %>/phones/<%= phone.id %>"
+         data-confirm="You sure?"
+         data-method="delete"
+         rel="nofollow">Delete</a>
+    </li>
+  <% end %>
+</ul>
+
+<a href="/contacts/<%= @contact.id %>/phones/new">Add Phone</a>
+
 
 <p><a href="/contacts">Click Here</a> to return to contacts.</p>
 <p><a href="/contacts/<%= @contact.id %>/edit">Click Here</a> to edit this contact.</p>
