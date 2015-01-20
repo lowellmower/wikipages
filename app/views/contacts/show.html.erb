@@ -23,9 +23,9 @@
 <button><a href="/contacts/<%= @contact.id %>/phones/new">Add Phone</a></button>
 
 
-<p><a href="/contacts">Click Here</a> to return to contacts.</p>
-<p><a href="/contacts/<%= @contact.id %>/edit">Click Here</a> to edit this contact.</p>
-<p><a href="/contacts/<%= @contact.id %>"
+<p><button><a href="/contacts">Click Here</a></button> to return to contacts.</p>
+<p><button><a href="/contacts/<%= @contact.id %>/edit">Click Here</a></button> to edit this contact.</p>
+<p><button><a href="/contacts/<%= @contact.id %>"
 	data-confirm="You sure?"
 	data-method="delete"
-	rel="nofollow">Click Here</a> to DELETE.</p>
+	rel="nofollow">Click Here</a></button> to DELETE.</p>
