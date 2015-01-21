@@ -1,11 +1,15 @@
 <% content_for(:title, "Wikipages!") %>
 
-<h1>Wikipages</h1>
-
+<div class="jumbotron">
+	<div class="container">
+		<h1>Wikipages!</h1>
+		<h3>A web-app designed to collect contact informaiton in one place for many people.</h3>
+		<p>Please add your informaiton to our contact list so we can stay in touch! Don't worry, it's safe!</p>
+		<p><a class="btn btn-primary" href="/contacts/new" role="button">Create New Contact!</a></p>
+	</div>
+</div>
 <ul>
 	<% @contacts.each do |contact| %>
 		<li><a href="/contacts/<%= contact.id %>"><%= contact.name %></a>  - email contact: <%= contact.email %></li>
 	<% end %>
 </ul>
-
-<p><button><a href="/contacts/new">Create New Contact</a></button></p>
