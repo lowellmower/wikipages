@@ -12,7 +12,8 @@ class ContactsController < ApplicationController
 	def create
 		@contact = Contact.new(params[:contact])
 		if @contact.save
-			render('contacts/success.html.erb')
+			flash[:notice] = "Your contact was saved to Wikipages!"
+			redirect_to("/contacts/#{@contact.id}")
 		else
 			render('contacts/new.html.erb')
 		end
@@ -31,15 +32,17 @@ class ContactsController < ApplicationController
 	def update
 		@contact = Contact.find(params[:id])
 			if @contact.update(params[:contact])
-			render('contacts/success.html.erb')
+				flash[:notice] = "Contact was successfully update!"
+				redirect_to("/contacts/#{@contact.id}")
 			else
-			render('contacts/edit.html.erb')
+				render('contacts/edit.html.erb')
 		end
 	end
 
 	def destroy
 		@contact = Contact.find(params[:id])
 		@contact.destroy
-		render('contacts/destroy.html.erb')
+		flash[:notice] = "The contact: '#{@contact.name}' was deleted!"
+		redirect_to('/contacts')
 	end
 end
