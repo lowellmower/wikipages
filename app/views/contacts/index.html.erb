@@ -1,15 +1,36 @@
 <% content_for(:title, "Wikipages!") %>
+<hr>
 
-<div class="jumbotron">
+<body background="assets/swirl_pattern.png">
 	<div class="container">
-		<h1>Wikipages!</h1>
-		<h3>A web-app designed to collect contact informaiton in one place for many people.</h3>
-		<p>Please add your informaiton to our contact list so we can stay in touch! Don't worry, it's safe!</p>
-		<p><a class="btn btn-primary" href="/contacts/new" role="button">Create New Contact!</a></p>
+		<div class="jumbotron">
+			<div class="container">
+				<h1>Wikipages!</h1>
+				<h3>A web-app designed to collect contact informaiton in one place for many people.</h3>
+				<p>Please add your informaiton to our contact list so we can stay in touch! Don't worry, it's safe!</p>
+				<p><a class="btn btn-primary" href="/contacts/new" role="button">Create New Contact!</a></p>
+			</div>
+		</div>
+	</div>	
+	<div class="container">
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<h2 class="panel-title">Contacts Added:</h2>
+			</div>
+			<div class="panel-body">
+				<ul style="list-style-type:none">
+					<% @contacts.each do |contact| %>
+						<div class="well well-sm"><li><a href="/contacts/<%= contact.id %>"><%= contact.name %></a>  - email contact: <%= contact.email %></li></div>
+					<% end %>
+				</ul>
+			</div>
+		</div>
 	</div>
-</div>
-<ul>
-	<% @contacts.each do |contact| %>
-		<li><a href="/contacts/<%= contact.id %>"><%= contact.name %></a>  - email contact: <%= contact.email %></li>
-	<% end %>
-</ul>
+	<hr>
+	<div class="container">
+		<div class="text-center">
+			<a class="btn btn-primary" href="#">Back to Top!</a>
+		</div>
+	</div>
+	<hr>
+</body>

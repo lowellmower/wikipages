@@ -1,9 +1,16 @@
-<h1>New Contact</h1>
+<body background="/assets/swirl_pattern.png">
+	<div class="container">
+		<div class="page-header">
+			<h1>New Contact</h1> 
+			<h3><small>Enter your contact information below:</small></h3>
+		</div>
+		<%= render('layouts/errors', :object => @contact) %>
 
-<%= render('layouts/errors', :object => @contact) %>
-
-<form action="/contacts" method="post">
-	<label for="contact_name">Name</label>
-	<%= render('form') %>
-	<button>Create Contact</button>
-</form>
+		<form action="/contacts" method="post">
+			<label for="contact_name">Name</label>
+			<%= render('form') %>
+			<hr>
+			<p><button class="btn btn-primary">Create Contact</button></p>
+		</form>
+	</div>	
+</body>
