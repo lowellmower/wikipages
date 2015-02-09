@@ -39,18 +39,18 @@
       </div>
       <div class="col-md-3">
         <h4>Contact List:</h4>
-        <a class="btn btn-primary" role="button" href="/contacts">Click Here</a>
+        <%= link_to 'Click Here', root_path, :class => 'btn btn-primary' %>
       </div>
       <div class="col-md-3">
         <h4>Edit Contact:</h4>
-        <a class="btn btn-primary" role="button" href="/contacts/<%= @contact.id %>/edit">Click Here</a>
+        <%= link_to 'Click Here', edit_contact_path(@contact), :class => 'btn btn-primary' %>
       </div>
       <div class="col-md-3">
         <h4>Delete Contact:</h4>
-        <a class="btn btn-danger" href="/contacts/<%= @contact.id %>"
-        	data-confirm="You sure?"
-        	data-method="delete"
-        	rel="nofollow">Click Here</a>
+          <%= link_to 'Click Here', contact_path(@contact),
+                                    :confirm => "Delete this contact?",
+                                    :method => "delete",
+                                    :class => "btn btn-danger" %>
       </div>
     </div>
   </div>

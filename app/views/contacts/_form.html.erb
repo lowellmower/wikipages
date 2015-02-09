@@ -1,8 +1,17 @@
-<label for="contact_name"></label>
-<input id="contact_name" name="contact[name]" tpye="text" value="<%= @contact.name %>">
+<%= form_for(@contact) do |f| %>
+	<div class="form-group">
+		<%= f.label :name %>
+		<%= f.text_field :name %>
+	</div>
 
-<label for="contact_phone">Phone</label>
-<input id="contact_phone" name="contact[phone]" tpye="text" value="<%= @contact.phone %>">
+	<div class="form-group">
+		<%= f.label :phone %>
+		<%= f.text_field :phone %>
+	</div>
 
-<label for="contact_email">Email</label>
-<input id="contact_email" name="contact[email]" tpye="text" value="<%= @contact.email %>">
+	<div class="form-group">
+		<%= f.label :email %>
+		<%= f.text_field :email %>
+	</div>
+	<%= f.submit(:class => 'btn btn-primary') %>
+<% end %>

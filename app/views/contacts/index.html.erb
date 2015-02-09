@@ -8,7 +8,8 @@
 				<h1>Wikipages!</h1>
 				<h3>A web-app designed to collect contact informaiton in one place for many people.</h3>
 				<p>Please add your informaiton to our contact list so we can stay in touch! Don't worry, it's safe!</p>
-				<p><a class="btn btn-primary" href="/contacts/new" role="button">Create New Contact!</a></p>
+				<!--<p><a class="btn btn-primary" href="/contacts/new" role="button">Create New Contact!</a></p> -->
+				<%= link_to 'Create New Contact', new_contact_path, :class => 'btn btn-primary' %>
 			</div>
 		</div>
 	</div>	

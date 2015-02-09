@@ -1,10 +1,18 @@
-<h1>Success!</h1>
+<% content_for(:title, 'Success!') %>
 
-<div class="container">
-	<img src="/assets/success.jpg" class="img-thumbnail img-responsive" height="500" width="250">
-</div>
+<body background="../assets/swirl_pattern.png">
+	<div class="container">
+		<h1>Success!</h1>
 
-<p>You have just created a new phone</p>
+		<div class="container">
+			<img src="/assets/success.jpg" class="img-thumbnail img-responsive" height="600" width="300">
+		</div>
 
-<p><button><a href="/contacts">Click Here</a></button> to return to contacts.</p>
-<p><button><a href="/contacts/<%= @phone.contact.id %>">Click Here</a></button> to view your contact.</p>
+		<h3>You have just created a new phone</h3>
+
+		<hr>
+
+		<p><a class="btn btn-primary" href="/contacts">Click Here</a> to return to contacts.</p>
+		<p><a class="btn btn-primary" href="/contacts/<%= @phone.contact.id %>">Click Here</a> to view your contact.</p>
+	</div>
+</body>

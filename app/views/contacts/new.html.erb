@@ -1,3 +1,4 @@
+<% content_for(:title, 'New Contact | Wikipages!') %>
 <body background="/assets/swirl_pattern.png">
 	<div class="container">
 		<div class="page-header">
@@ -5,12 +6,6 @@
 			<h3><small>Enter your contact information below:</small></h3>
 		</div>
 		<%= render('layouts/errors', :object => @contact) %>
-
-		<form action="/contacts" method="post">
-			<label for="contact_name">Name</label>
-			<%= render('form') %>
-			<hr>
-			<p><button class="btn btn-primary">Create Contact</button></p>
-		</form>
+		<%= render('form') %>
 	</div>	
 </body>

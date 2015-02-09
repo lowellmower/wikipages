@@ -1,9 +1,15 @@
-<h1>Please update the phone number for contact:</h1>
+<% content_for(:title, 'Edit Phone | Wikipages!') %>
 
-<form action="/contacts/phones/<%= @phone.id %>" method="post">
-	<input name="_method" type="hidden" value="patch">
-	<label for="phone_number">Name</label>
-	<input id="phone_number" name="phone[number]" tpye="text" value="<%= @phone.number %>">
+<body background="../../../../assets/swirl_pattern.png">
+	<div class="container">
+		<h1>Please update the phone number for contact:</h1>
 
-	<button>Update Number</button>
-</form>
+		<%= form_for(@phone) do |p| %>
+			<div class="form-group">
+				<%= p.label :number %>
+				<%= p.text_field :number %>
+			</div>
+			<%= p.submit(:class => 'btn btn-primary') %>
+		<% end %>
+	</div>
+</body>
